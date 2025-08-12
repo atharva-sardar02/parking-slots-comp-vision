@@ -1,0 +1,6 @@
+1. https://www.kaggle.com/datasets/daggysheep/find-a-car-park
+This is the dataset which matches with our problem statement but we have 1067 images so we would have to work with this dataset along with some other dataset.
+2. https://lafi.github.io/LPN/
+This dataset has drone captured photograph of 4 parking lots with 90000 cars which we might need to merge with the first dataset.
+3. https://www.kaggle.com/datasets/mohidabdulrehman/ultimate-car-price-prediction-dataset
+Type of car prediction: It gives us the type of car which we can use to predict the car type 
