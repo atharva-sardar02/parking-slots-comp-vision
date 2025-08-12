@@ -32,17 +32,15 @@ An intelligent parking management solution that detects the occupancy status of 
 ## 📂 Repository Structure
 
 ```plaintext
-├── data/                        # Dataset: 'free' (vacant) and 'full' (occupied) images
-├── dump/                        # Temporary files
-├── free/                        # Sample vacant slot images
-├── full/                        # Sample occupied slot images
-├── trial data/                  # Test images for CV approach
-├── sample_dataset.csv            # Metadata with time/date labels
-├── predicting_vacant_space_*.py  # SVM + HOG detection scripts
-├── skimage_svm4.py               # SVM classifier training
-├── UC_Final_Project.py           # Main project script
-├── decision_tree_plot*.png       # Model visualizations
-├── README.md                     # Project documentation
+├── images/                          # Screenshots for README
+├── sample data/                     # Sample dataset images
+├── Urban_computing_final_project.pdf # Project report
+├── image_date_extractor.py           # Extracts date/time metadata from images
+├── SVM_Model_Computer_vision.py      # SVM + HOG classifier training/testing
+├── Based_on_date_time_vacancy_predictor.py # Time & date-based vacancy prediction models
+├── date_time_dataset.csv             # Metadata for time/date prediction
+├── requirements.txt                  # Dependencies
+├── README.md                         # Project documentation
 ```
 ## 🖥 Running Locally
 
@@ -52,27 +50,39 @@ pip install -r requirements.txt
 ```
 **2️⃣ Run SVM-based Vacancy Detection**
 ```bash
-python skimage_svm4.py
+python "SVM Model Computer vision.py"
 ```
-**3️⃣ Run Computer Vision (OpenCV) Real-time Detection**
+**3️⃣ Run Computer Vision (OpenCV) Real-date & time Detection**
 ```bash
-python last_moment.py
+python image_date_extractor.py
 ```
-**4️⃣ Run Time & Date Prediction Models**
+**4️⃣ Run Free Prediction Models based on Time & Date**
 ```bash
-python UC_Final_Project.py
+python "Based on date_time vacancy predictor.py"
 ```
 
 ## ⚙ Configuration
-- **Dataset:** Place `free/` and `full/` folders inside the `data/` directory.
+- **Dataset:** Place `free/` and `full/` folders inside the `sample_data/` directory.
 - **Parameters:** Modify image dimensions, HOG parameters, and model settings inside respective `.py` scripts.
 
 ---
 
 ## 📈 Results
+
 - **SVM + HOG:** 96% accuracy, high precision & recall.
-- **Random Forest, Decision Tree, KNN:** 92% accuracy in time/date-based prediction.
 - **Real-time CV:** Successfully detects and counts slots in under 0.05s per frame on CPU.
+
+### Time & Date-Based Prediction (7 Models)
+
+| Model                  | Accuracy | Precision (avg) | Recall (avg) | F1-score (avg) |
+|------------------------|----------|-----------------|--------------|----------------|
+| Decision Tree          | 0.92     | 0.92             | 0.92         | 0.92           |
+| Neural Network         | 0.69     | 0.48             | 0.69         | 0.49           |
+| K-Nearest Neighbors    | 0.92     | 0.92             | 0.92         | 0.92           |
+| Random Forest          | 0.92     | 0.92             | 0.92         | 0.92           |
+| Support Vector Machine | 0.70     | 0.49             | 0.70         | 0.49           |
+| Logistic Regression    | 0.70     | 0.49             | 0.70         | 0.49           |
+| Naïve Bayes            | 0.68     | 0.48             | 0.68         | 0.48           |
 
 ---
 
